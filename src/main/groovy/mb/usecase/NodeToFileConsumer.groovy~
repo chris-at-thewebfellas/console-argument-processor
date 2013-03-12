@@ -1,0 +1,19 @@
+package wgsn.usecase
+
+import wgsn.jcrquery.NodeIteratorConsumer
+
+import javax.jcr.NodeIterator
+
+class NodeToFileConsumer implements NodeIteratorConsumer{
+
+    File outputFile
+
+    @Override
+    void consume(NodeIterator nodeIterator) {
+
+        nodeIterator.each { javax.jcr.Node node ->
+            outputFile.append node.path + '\n'
+        }
+
+    }
+}

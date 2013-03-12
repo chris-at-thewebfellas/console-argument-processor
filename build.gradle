@@ -1,0 +1,28 @@
+apply plugin: 'idea'
+apply plugin: 'maven'
+apply plugin: 'groovy'
+apply plugin: 'java'
+
+group = 'com.mb'
+artifactId = 'console-queryprocessor'
+version = "1.0.${new Date().format('yyMMdd.HHmm')}"
+
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+
+    def springVersion = '3.2.1.RELEASE'
+    groovy 'org.codehaus.groovy:groovy-all:2.1.1'
+
+    compile "org.springframework:spring-core:$springVersion",
+            "org.springframework:spring-aop:$springVersion",
+            "org.springframework:spring-context:$springVersion"
+
+    testCompile 'org.spockframework:spock-core:0.7-groovy-2.0',
+                 'cglib:cglib-full:2.0.2'
+
+}
