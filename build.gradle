@@ -5,7 +5,7 @@ apply plugin: 'java'
 
 group = 'com.mb'
 artifactId = 'console-queryprocessor'
-version = "1.0.${new Date().format('yyMMdd.HHmm')}"
+version = "1.0.1"
 
 
 repositories {
